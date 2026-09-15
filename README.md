@@ -1,2 +1,2 @@
-# raflabcore-extensions
+# developer-extensions
 Extensões para facilitar o desenvolvimento em C#
