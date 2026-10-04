@@ -1,0 +1,30 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+## Removendo os itens de configuração do usuário ##
+**/.vs/
+**/applicationhost.config
+**/*.csproj.user
+**/.github/instructions/*.md
+
+## Removendo Arquivos BIN e Obj do projeto e subprojetos ##
+**/[Bb]in/**
+**/[Oo]bj/**
+**/[Oo]bj/[Dd]ebug**
+**\DesignTimeResolveAssemblyReferencesInput.cache
+
+## Removendo arquivos da Pasta Packege ##
+**/packages
+
+## Removendo arquivos do DataTools ##
+*.dbmdl
+**/*.jfm
+**/*.sqlproj.user
+
+## Removendo arquivos do publicação ##
+**/*.pubxml
+**/*.pubxml.user
+
+## Removendo arquivos de log ##
+**/*.log

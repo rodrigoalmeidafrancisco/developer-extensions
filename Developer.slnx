@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Developer.ExtensionCore/">
+    <Project Path="Developer.ExtensionCore/Developer.ExtensionCore.csproj" />
+  </Folder>
+  <Folder Name="/Developer.HttpCore/">
+    <Project Path="Developer.HttpCore/Developer.HttpCore.csproj" />
+  </Folder>
+  <Folder Name="/Developer.Notifications/">
+    <Project Path="Developer.NotificationCore/Developer.NotificationCore.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+</Solution>
