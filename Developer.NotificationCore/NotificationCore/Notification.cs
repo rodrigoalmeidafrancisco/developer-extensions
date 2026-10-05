@@ -32,5 +32,26 @@ namespace Developer.NotificationCore
         [JsonIgnore] // Impede que o campo seja serializado em JSON
         [IgnoreDataMember] // Impede que o campo seja serializado por outros serializadores (ex: DataContract)
         public string Message { get; set; }
+
+        /// <summary>
+        /// Duas notificações são iguais quando possuem a mesma chave e a mesma mensagem.
+        /// </summary>
+        public override bool Equals(object obj)
+        {
+            return obj is Notification other
+                && string.Equals(Key, other.Key, System.StringComparison.Ordinal)
+                && string.Equals(Message, other.Message, System.StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// Gera o hash a partir da chave e da mensagem, consistente com <see cref="Equals(object)"/>.
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((Key?.GetHashCode() ?? 0) * 397) ^ (Message?.GetHashCode() ?? 0);
+            }
+        }
     }
 }

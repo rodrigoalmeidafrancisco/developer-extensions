@@ -28,7 +28,7 @@ namespace Developer.NotificationCore
         [NotMapped] // Indica que a propriedade não deve ser mapeada para uma coluna de banco de dados
         [JsonIgnore] // Impede que a propriedade seja serializada em JSON
         [IgnoreDataMember] // Impede que a propriedade seja serializada por outros serializadores
-        public bool IsValid => _notifications.Count != 0 == false; // Retorna true quando não há notificações (ou seja, válido)
+        public bool IsValid => _notifications.Count == 0; // Retorna true quando não há notificações (ou seja, válido)
 
         #region Methods // Início da região que agrupa os métodos da classe
 
@@ -53,7 +53,7 @@ namespace Developer.NotificationCore
         public List<Notification> GetNotifications()
         {
             // Cria novas instâncias de Notification com chave e mensagem, remove duplicadas e converte para lista
-            return _notifications.Select(n => new Notification(n.Key.Trim(), n.Message.Trim())).Distinct().ToList();
+            return _notifications.Select(n => new Notification(n.Key?.Trim(), n.Message?.Trim())).Distinct().ToList();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Developer.NotificationCore
         public List<string> GetNotificationsMessages()
         {
             // Seleciona as mensagens, remove duplicadas e converte para lista
-            return _notifications.Select(n => n.Message.Trim()).Distinct().ToList();
+            return _notifications.Select(n => n.Message?.Trim()).Distinct().ToList();
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Developer.NotificationCore
         public List<string> GetNotificationsKeys()
         {
             // Seleciona as chaves, remove duplicadas e converte para lista
-            return _notifications.Select(n => n.Key.Trim()).Distinct().ToList();
+            return _notifications.Select(n => n.Key?.Trim()).Distinct().ToList();
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Developer.NotificationCore
         public List<string> GetNotificationsKeysAndMessages()
         {
             // Combina chave e mensagem, remove duplicadas e converte para lista
-            return _notifications.Select(n => $"{n.Key.Trim()}: {n.Message.Trim()}").Distinct().ToList();
+            return _notifications.Select(n => $"{n.Key?.Trim()}: {n.Message?.Trim()}").Distinct().ToList();
         }
 
 
@@ -93,7 +93,6 @@ namespace Developer.NotificationCore
         /// </summary>
         /// <param name="message">A mensagem da notificação.</param>
         /// <remarks>Se a notificação já existir na lista interna, ela não será adicionada novamente.</remarks>
-        /// <returns>Uma instância de T representando a notificação adicionada.</returns>
         public void AddNotification(string message)
         {
             // Cria a notificação com chave nula

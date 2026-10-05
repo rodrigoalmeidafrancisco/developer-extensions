@@ -117,7 +117,7 @@ namespace Developer.NotificationCore.Validations
         public Contract<T> IsCPF(string val, string message)
         {
             // Limpeza e verificação básica
-            var cpf = new string(val.Where(char.IsDigit).ToArray());
+            var cpf = new string((val ?? string.Empty).Where(char.IsDigit).ToArray());
 
             if (cpf.Length != 11 || new HashSet<char>(cpf).Count == 1)
             {
@@ -155,7 +155,7 @@ namespace Developer.NotificationCore.Validations
         public Contract<T> IsCPF(string val, string key, string message)
         {
             // Limpeza e verificação básica
-            var cpf = new string(val.Where(char.IsDigit).ToArray());
+            var cpf = new string((val ?? string.Empty).Where(char.IsDigit).ToArray());
 
             if (cpf.Length != 11 || new HashSet<char>(cpf).Count == 1)
             {

@@ -1,12 +1,18 @@
 <Solution>
   <Folder Name="/Developer.ExtensionCore/">
-    <Project Path="Developer.ExtensionCore/Developer.ExtensionCore.csproj" />
+    <Project Path="Developer.ExtensionCore/ExtensionCore.Exemples/Developer.ExtensionCore.Exemples.csproj" />
+    <Project Path="Developer.ExtensionCore/ExtensionCore.Tests/Developer.ExtensionCore.Tests.csproj" />
+    <Project Path="Developer.ExtensionCore/ExtensionCore/Developer.ExtensionCore.csproj" />
   </Folder>
   <Folder Name="/Developer.HttpCore/">
-    <Project Path="Developer.HttpCore/Developer.HttpCore.csproj" />
+    <Project Path="Developer.HttpCore/HttpCore.Exemples/Developer.HttpCore.Exemples.csproj" />
+    <Project Path="Developer.HttpCore/HttpCore.Tests/Developer.HttpCore.Tests.csproj" />
+    <Project Path="Developer.HttpCore/HttpCore/Developer.HttpCore.csproj" />
   </Folder>
   <Folder Name="/Developer.Notifications/">
-    <Project Path="Developer.NotificationCore/Developer.NotificationCore.csproj" />
+    <Project Path="Developer.NotificationCore/NotificationCore.Examples/Developer.NotificationCore.Examples.csproj" />
+    <Project Path="Developer.NotificationCore/NotificationCore.Tests/Developer.NotificationCore.Tests.csproj" />
+    <Project Path="Developer.NotificationCore/NotificationCore/Developer.NotificationCore.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="README.md" />

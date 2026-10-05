@@ -15,7 +15,7 @@ namespace Developer.NotificationCore.Validations
         /// <returns></returns>
         public Contract<T> IsCreditCard(string val, string message)
         {
-            val = Regex.Replace(val, NotificationCoreRegexPatterns.OnlyNumbersPattern, "");
+            val = Regex.Replace(val ?? string.Empty, NotificationCoreRegexPatterns.OnlyNumbersPattern, "");
 
             if (string.IsNullOrWhiteSpace(val))
             {
@@ -30,7 +30,7 @@ namespace Developer.NotificationCore.Validations
             {
                 if (!char.IsDigit(digit))
                 {
-                    AddNotification(val, message);
+                    AddNotification(message);
                     return this;
                 }
 
@@ -59,7 +59,7 @@ namespace Developer.NotificationCore.Validations
         /// <returns></returns>
         public Contract<T> IsCreditCard(string val, string key, string message)
         {
-            val = Regex.Replace(val, NotificationCoreRegexPatterns.OnlyNumbersPattern, "");
+            val = Regex.Replace(val ?? string.Empty, NotificationCoreRegexPatterns.OnlyNumbersPattern, "");
 
             if (string.IsNullOrWhiteSpace(val))
             {
@@ -74,7 +74,7 @@ namespace Developer.NotificationCore.Validations
             {
                 if (!char.IsDigit(digit))
                 {
-                    AddNotification(val, message);
+                    AddNotification(key, message);
                     return this;
                 }
 
